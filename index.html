@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>一粒新聞台網站 驗證</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    p {
+        color: #555;
+    }
+
+    #passwordInput {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #message {
+        color: red;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <h1></h1>
+    <h3>請輸入網站密碼：</h3>
+  <input type="password" id="passwordInput" name="password">
+  <input type="checkbox" id="showPassword"> 顯示密碼
+    <button onclick="checkPassword()">提交</button>
+  <a href="發佈驗證.html">發布
+  <p>
+    <span id="message"></span>
+      </p>
+
+    <script>
+        function checkPassword() {
+            var passwordInput = document.getElementById("passwordInput").value;
+            if (passwordInput === "0") {
+                window.location.href = "home.html"; 
+            } 
+            else  {
+                document.getElementById("message").innerHTML = "哈哈哈笑你不知道密碼";
+            }
+        }
+
+      var passwordInput = document.getElementById("passwordInput");
+      var showPasswordCheckbox = document.getElementById("showPassword");
+
+      showPasswordCheckbox.addEventListener("change", function () {
+          if (showPasswordCheckbox.checked) {
+              passwordInput.type = "text"; // 显示密码
+          } else {
+              passwordInput.type = "password"; // 隐藏密码
+          }
+      });
+    </script>
+</body>
+</html>
